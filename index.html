@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Animation</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .yes {
+            background-color: white;
+            color: black;
+        }
+        .no {
+            background-color: red;
+            color: white;
+            position: relative;
+        }
+        .cat {
+            width: 500px;
+            margin-top: 250px;
+            animation: shake 0.5s infinite alternate;
+        }
+        @keyframes shake {
+            0% { transform: translateX(-5px); }
+            100% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Do u still love me bibi?</h1>
+        <button class="btn yes" onclick="acceptLove()">i love u</button>
+        <button class="btn no" onclick="growNo()">em sorry</button>
+        <br>
+        <img src="tasya.jpg" class="cat" alt="Cute cat">
+    </div>
+
+    <script>
+        let noBtn = document.querySelector(".no");
+        let noSize = 16;
+        
+        function growNo() {
+            noSize += 10;
+            noBtn.style.fontSize = noSize + "px";
+            if (noSize >= 60) {
+                noBtn.innerText = "please:(!";
+            }
+        }
+        
+        function acceptLove() {
+            alert("Yay! I love u more!");
+        }
+    </script>
+</body>
+</html>
